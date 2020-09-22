@@ -15,7 +15,7 @@ class _01_SwappingDigits {
 		
 		int[] z = {7, 3, 5, 9, 2};
 		int[] q = {2, 3, 5, 7, 9};
-		sortIntArray(z);
+		bubbleSort(z);
 		assertArrayEquals(q, z);
 		
 		int[] m = {7, 3, 9, 5, 2};
@@ -24,20 +24,32 @@ class _01_SwappingDigits {
 	
 	//1. Complete the method so that the first two elements of the array are swapped
 	public static void swapArrayOfTwo(int[] arr) {
-		
+		int first = arr[0];
+		int second = arr[1];
+		arr[0] = second;
+		arr[1] = first;
 	}
 	
 	//2. Complete the method so that it sorts the array using a bubble sort.
 	//   Iterate through the array and when you find two elements that are out
 	//   of order, swap them. Repeat this until the array is in order.
-	public static void sortIntArray(int[] arr) {
-		
+	public static void bubbleSort(int[] arr) {
+		for (int x = 0; x< arr.length-1; x++) {
+			for (int y = 0; y<arr.length-1; y++) {
+				if (arr[y]>arr[y+1]) {
+				int var = arr[y];
+				arr[y] = arr[y+1];
+						arr[y+1] = var;
+				}
+			}
+		}
 	}
 	
 	//3. Complete the method so that it finds the middle number in the array.
 	//   *Hint* it helps to sort it first.
 	//   *Double Hint* Use the method you already wrote in step 2 to sort it
 	public static int findMiddle(int[] arr) {
-		return 0;
+		bubbleSort(arr);
+		return arr[arr.length/2];
 	}
 }
