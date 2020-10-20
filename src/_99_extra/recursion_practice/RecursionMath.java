@@ -34,7 +34,7 @@ public class RecursionMath {
 	void testMultiplication() {
 		assertEquals(12, recursiveMultiplication(3, 4));
 		//1  Add more JUnit tests like the one above to test your method
-		
+		assertEquals()
 	}
 	
 	
